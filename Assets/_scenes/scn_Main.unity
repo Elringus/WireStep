@@ -554,6 +554,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AutoSpawnFrequency: 3
+  MaxArrowDistance: 0
+  HP: 8.30000019
 --- !u!212 &702957870
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -698,6 +700,7 @@ GameObject:
   - 4: {fileID: 773273877}
   - 212: {fileID: 773273876}
   - 114: {fileID: 773273875}
+  - 58: {fileID: 773273878}
   m_Layer: 0
   m_Name: ball-spawner-manual
   m_TagString: Untagged
@@ -717,6 +720,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AutoSpawnFrequency: 0
+  MaxArrowDistance: 3
+  HP: 8.30000019
 --- !u!212 &773273876
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -752,6 +757,17 @@ Transform:
   - {fileID: 959244939}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!58 &773273878
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 773273874}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0}
 --- !u!1 &959244937
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +778,7 @@ GameObject:
   - 4: {fileID: 959244939}
   - 212: {fileID: 959244938}
   m_Layer: 0
-  m_Name: gate
+  m_Name: hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,8 +804,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: .592156887, g: .960784316, b: .592156887, a: .392156869}
+  m_Sprite: {fileID: 21300000, guid: a0e9cc1caaf4b024e8c326ad24331196, type: 3}
+  m_Color: {r: .592156887, g: .960784316, b: .592156887, a: 1}
 --- !u!4 &959244939
 Transform:
   m_ObjectHideFlags: 0
@@ -798,9 +814,112 @@ Transform:
   m_GameObject: {fileID: 959244937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 15, y: .150000006, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 8.30000019, y: 4, z: 1}
+  m_Children:
+  - {fileID: 1041819333}
   m_Father: {fileID: 773273877}
+  m_RootOrder: 0
+--- !u!1 &1041819332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1041819333}
+  - 114: {fileID: 1041819335}
+  - 61: {fileID: 1041819334}
+  m_Layer: 0
+  m_Name: gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1041819333
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041819332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 959244939}
+  m_RootOrder: 0
+--- !u!61 &1041819334
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041819332}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 3, y: .100000001}
+  m_Center: {x: 0, y: 0}
+--- !u!114 &1041819335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041819332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3b6ae25fd05d4dacb50103f167fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1071475743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1071475746}
+  - 114: {fileID: 1071475745}
+  - 61: {fileID: 1071475744}
+  m_Layer: 0
+  m_Name: gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1071475744
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071475743}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 3, y: .100000001}
+  m_Center: {x: 0, y: 0}
+--- !u!114 &1071475745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071475743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e3b6ae25fd05d4dacb50103f167fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1071475746
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071475743}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1960049150}
   m_RootOrder: 0
 --- !u!1 &1336265513
 GameObject:
@@ -897,7 +1016,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1531656346}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d91ba2beaa73a9c48b32d5a5d9fe0d8e, type: 3}
   m_Name: 
@@ -1325,7 +1444,7 @@ GameObject:
   - 4: {fileID: 1960049150}
   - 212: {fileID: 1960049149}
   m_Layer: 0
-  m_Name: gate
+  m_Name: hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1351,8 +1470,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: .956862748, g: .592156887, b: .945098042, a: .392156869}
+  m_Sprite: {fileID: 21300000, guid: a0e9cc1caaf4b024e8c326ad24331196, type: 3}
+  m_Color: {r: .956862748, g: .592156887, b: .945098042, a: 1}
 --- !u!4 &1960049150
 Transform:
   m_ObjectHideFlags: 0
@@ -1361,7 +1480,8 @@ Transform:
   m_GameObject: {fileID: 1960049148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 15, y: .150000006, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 8.30000019, y: 2.5, z: 1}
+  m_Children:
+  - {fileID: 1071475746}
   m_Father: {fileID: 702957871}
   m_RootOrder: 0

@@ -14,7 +14,12 @@ public class Ball : MonoBehaviour
 		ActiveBalls.Add(newBall);
 	}
 
-	private void Destroy ()
+	private void OnBecameInvisible ()
+	{
+		Destroy();
+	}
+
+	public void Destroy ()
 	{
 		ActiveBalls.Remove(this);
 		Destroy(gameObject);
