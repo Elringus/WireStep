@@ -2,14 +2,15 @@
 
 public class BallSpawner : MonoBehaviour
 {
-	public float SpawnFrequency;
+	public float AutoSpawnFrequency;
 
 	private void Awake () 
 	{
-		InvokeRepeating("Spawn", 0, SpawnFrequency);
+		if (AutoSpawnFrequency > 0)
+			InvokeRepeating("AutoSpawn", 0, AutoSpawnFrequency);
 	}
 
-	private void Spawn ()
+	private void AutoSpawn ()
 	{
 		Ball.Initialize(transform.position, -Vector2.up * Random.Range(50, 100));
 	}
